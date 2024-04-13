@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/carstyle.css' %}">
+{% endblock %}
+{% block content %}
+
+    
+    <div class="baba">
+        <div class="carousel">
+            <div class="slider">
+                <section><img src="{% static 'images/crsl1.jpeg' %}" alt="alternative-text"></section>
+                <section><img src="{% static 'images/crsl1.jpeg' %}" alt="alternative-text"></section>
+                <section><img src="{% static 'images/crsl1.jpeg' %}" alt="alternative-text"></section>
+                <section><img src="{% static 'images/crsl1.jpeg' %}" alt="alternative-text"></section>
+            </div>
+            <div class="controls">
+                <span class="arrow left material-icons">keyboard_arrow_left</span>
+                <span class="arrow right material-icons">keyboard_arrow_right</span>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
+{% block extra_js %}
+<script src="{% static 'js/carscript.js' %}"></script>
+{% endblock %}
