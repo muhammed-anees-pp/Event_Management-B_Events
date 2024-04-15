@@ -1,5 +1,15 @@
 {% extends 'base.html' %}
 {% block content %}
-Booking page
+
+<div class="container p-3 text-center">
+    <h1 style="color: rgb(0, 0, 0);">Book Your Events</h1><br>
+<form action="" method="POST">
+
+    {% csrf_token %}
+    {{form.as_p}}
+
+<button class="btn text-center" style="background-color: rgb(192, 53, 53);">Book Now</button>
+</form>
+</div>
 
 {% endblock %}
