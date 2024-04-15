@@ -1,0 +1,43 @@
+{% load static %}
+{% block extra_css %}
+  <link rel="stylesheet" href="{% static 'css/registerstyle.css' %}">
+{% endblock %}
+
+
+<div class="container">
+  <div class="title">Registration</div>
+    <div class="content">
+     <form action="" method="post">
+        {% csrf_token %}
+        <div class="user-details">
+        <div class="input-box">
+             <label>User Name : </label>
+        <input type="text" name="username">
+        </div>
+          <div class="input-box">
+            <label>E-Mail ID : </label>
+            <input type="email" name="email">
+          </div>
+          <div class="input-box">
+               <label>Password : </label>
+               <input type="password" name="password">  
+          </div>
+          <div class="input-box">
+           <label>Confirm Password: </label>
+           <input type="password" name="confirmpassword">
+          </div>
+          </div>
+        <div class="button">
+          <input type="submit" name="submit" value="SignUp">
+        </div>
+      </form>
+         <div>
+                {% for message in messages %}
+                  <script>
+                    alert('{{message}}');
+                  </script>
+                {% endfor %}
+    </div>
+  </div>
+</div>
+

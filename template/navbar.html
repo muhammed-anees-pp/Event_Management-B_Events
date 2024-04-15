@@ -10,7 +10,7 @@
           <li class="nav-item">
             <a class="nav-link" href="{% url 'about' %}">About</a>
           </li>
-
+          {% if user.is_authenticated %}
           <li class="nav-item">
             <a class="nav-link" href="{% url 'events' %}">Events</a>
           </li>
@@ -22,18 +22,17 @@
           <li class="nav-item">
             <a class="nav-link" href="{% url 'contact' %}">Contacts</a>
           </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="#">Logout</a>
-          </li>
-
-                
+          <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Logout</a></li>                
         </ul> 
+
+        {% else %}
         
         <ul class="nav navbar-nav navbar-right">
-            <li class="nav-item"><a class="nav-link" href="#">Sign up</a></li>  
-            <li class="nav-item"><a class="nav-link" href="#">Login</a></li>          
+            <li class="nav-item"><a class="nav-link" href="{% url 'register' %}">Sign up</a></li>  
+            <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a></li>  
+                    
         </ul>
+        {% endif %}
         
       </div>
     </div>
